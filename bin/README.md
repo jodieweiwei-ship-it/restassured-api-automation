@@ -28,8 +28,8 @@ restassured-api-automation/
 ## ✨ Features
 - Complete REST API testing (GET, POST, PUT, PATCH, DELETE)
 - Request and response validation
-- JSON response assertions
-- Response time validation
+- JSON schema validation
+- Response time assertions
 - Authentication and authorization testing
 - Positive and negative test scenarios
 - Detailed test reporting with TestNG
@@ -46,24 +46,7 @@ git clone https://github.com/yourusername/restassured-api-automation.git
 cd restassured-api-automation
 mvn clean install
 ```
-## 🔐 API Configuration
 
-### Headers
-All API requests include the following headers:
-- `x-api-key: reqres-free-v1` - API authentication key
-- `Content-Type: application/json` - JSON request format
-
-Headers are configured centrally in `BaseTest.java` using `RequestSpecification` 
-for maintainability and consistency across all tests.
-
-### Customizing Headers
-To modify or add headers, update the `requestSpec` in `BaseTest.java`:
-```java
-requestSpec = new RequestSpecBuilder()
-    .addHeader("x-api-key", "your-key")
-    .addHeader("Custom-Header", "value")
-    .build();
-```
 ### Running Tests
 Run all tests:
 ```bash
@@ -73,12 +56,11 @@ mvn test
 Run specific test class:
 ```bash
 mvn test -Dtest=UserAPITest
-mvn test -Dtest=AuthenticationTest
 ```
 
 ## 📊 Test Coverage
 
-### User API Tests (8 scenarios)
+### User API Tests
 - ✅ GET - Retrieve list of users with pagination
 - ✅ GET - Retrieve single user by ID
 - ✅ GET - Handle non-existent user (404)
@@ -88,52 +70,75 @@ mvn test -Dtest=AuthenticationTest
 - ✅ DELETE - Remove user
 - ✅ Response time validation
 
-### Authentication Tests (4 scenarios)
+### Authentication Tests
 - ✅ Successful registration
-- ✅ Registration validation (missing password)
+- ✅ Registration validation (missing fields)
 - ✅ Successful login
 - ✅ Login with invalid credentials
 
-## 🎯 Sample Test Output
+## 🎯 Key Test Scenarios
+
+### Example: User Creation Validation
+```java
+@Test
+public void testCreateUser() {
+    given()
+        .contentType(ContentType.JSON)
+        .body("{\"name\":\"Jodie Wei\",\"job\":\"SDET\"}")
+    .when()
+        .post("/users")
+    .then()
+        .statusCode(201)
+        .body("name", equalTo("Jodie Wei"))
+        .body("id", notNullValue());
+}
+```
+
+### Example: Response Time Check
+```java
+@Test
+public void testResponseTime() {
+    Response response = given().get("/users?page=1");
+    Assert.assertTrue(response.getTime() < 2000, 
+        "Response time should be under 2 seconds");
+}
+```
+
+## 📈 Future Enhancements
+- [ ] Add data-driven testing with external data files
+- [ ] Implement API chaining (use response from one test in another)
+- [ ] Add Allure reporting
+- [ ] Database validation integration
+- [ ] API contract testing
+- [ ] Performance testing scenarios
+- [ ] CI/CD pipeline integration
+
+## 📝 API Documentation
+Using reqres.in demo API:
+- Base URL: https://reqres.in/api
+- Full documentation: https://reqres.in/
+
+## 👤 Author
+Wei Wei (Jodie)
+- LinkedIn: [your-linkedin-url]
+- Email: jodieweiwei@gmail.com
+
+## 📄 License
+This project is for educational and demonstration purposes.
+
+---
+
+## 🔍 Sample Test Output
 ```
 [INFO] Running tests.UserAPITest
 Status Code: 200
 Response Time: 451ms
+Response Body: {"page":1,"per_page":6,"total":12...}
 Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] Running tests.AuthenticationTest
 Tests run: 4, Failures: 0, Errors: 0, Skipped: 0
 
 [INFO] BUILD SUCCESS
-Total tests: 12, Passed: 12, Failed: 0
-```
-
-## 📈 Key Test Validations
-- HTTP status codes (200, 201, 400, 404)
-- JSON response structure
-- Response data accuracy
-- Response time performance
-- Error handling
-- Field validations
-
-## 🎓 Learning Outcomes
-This project demonstrates:
-- RestAssured API testing framework
-- TestNG test organization
-- Maven project management
-- HTTP methods (GET, POST, PUT, PATCH, DELETE)
-- JSON request/response handling
-- API testing best practices
-
-## 📝 API Documentation
-Using reqres.in demo API:
-- Base URL: https://reqres.in/api
-- Documentation: https://reqres.in/
-
-## 👤 Author
-Wei Wei (Jodie)
-- LinkedIn: https://www.linkedin.com/in/wei-wei-jodie/
-- Email: jodieweiwei@gmail.com
-
-## 📄 License
-This project is for educational and demonstration purposes.
+```# restassured-api-automation
+"API test automation using RestAssured and TestNG for RESTful services
