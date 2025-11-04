@@ -8,13 +8,14 @@ import io.restassured.response.Response;
 import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
-    protected String baseURI = "https://reqres.in/api";
+   // protected String baseURI = "https://reqres.in/api";
     protected RequestSpecification requestSpec;  // 👈 添加这个
 
     @BeforeClass
     public void setup() {
-        RestAssured.baseURI = baseURI;
+        //RestAssured.baseURI = baseURI;
         requestSpec = new RequestSpecBuilder()
+        		.setBaseUri("https://reqres.in/api")
                 .addHeader("x-api-key", "reqres-free-v1")  // 👈 添加header
                 .addHeader("Content-Type", "application/json")  // 👈 也可以加其他通用header
                 .build();
