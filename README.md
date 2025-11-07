@@ -144,5 +144,5 @@ Wei Wei (Jodie)
 This project is for educational and demonstration purposes.
 
 ## 📊 Test Results
-![Test Report](screenshots/Screenshot 2025-11-07 150222.png)
-![Test Report](screenshots/Screenshot 2025-11-07 150254.png)
+![Test Report](screenshots/Screenshot-2025-11-07-150222.png)
+![Test Report](screenshots/Screenshot-2025-11-07-150254.png)
