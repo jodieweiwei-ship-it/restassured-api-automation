@@ -88,11 +88,16 @@ mvn test -Dtest=AuthenticationTest
 - ✅ DELETE - Remove user
 - ✅ Response time validation
 
-### Authentication Tests (4 scenarios)
+### Authentication Tests (8 scenarios)
 - ✅ Successful registration
+- ✅ Registration validation (wrong password)
 - ✅ Registration validation (missing password)
+- ✅ Registration validation (missing email)
 - ✅ Successful login
-- ✅ Login with invalid credentials
+- ✅ Login with invalid credentials (wrong password)
+- ✅ Login with invalid credentials (Missing password)
+- ✅ Login with invalid credentials (Missing username)
+
 
 ## 🎯 Sample Test Output
 ```
@@ -137,3 +142,7 @@ Wei Wei (Jodie)
 
 ## 📄 License
 This project is for educational and demonstration purposes.
+
+## 📊 Test Results
+![Test Report](screenshots/Screenshot 2025-11-07 150222.png)
+![Test Report](screenshots/Screenshot 2025-11-07 150254.png)

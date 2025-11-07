@@ -31,8 +31,25 @@ public class AuthenticationTest extends BaseTest {
             .body("id", equalTo(4))
             .body("token", equalTo("QpwL5tke4Pnpja7X4"));
     }
+    @Test(priority = 2, description = "Registration wrong password - Verify 400")
+    public void testRegistrationWrongPassword() {
+        String requestBody = "{\r\n"
+        		+ "    \"email\": \"sydney@fife\"\r\n"
+        		+"    \"password\": \"worng password\"\n"
+        		+ "}";
 
-    @Test(priority = 2, description = "Registration without password - Verify 400")
+        given()
+        .spec(requestSpec)  // 👈 添加
+
+            //.contentType(ContentType.JSON)
+            .body(requestBody)
+        .when()
+            .post("/register")
+        .then()
+            .statusCode(400)
+            .body("error", equalTo("Bad Request"));
+    }
+    @Test(priority = 3, description = "Registration without password - Verify 400")
     public void testRegistrationMissingPassword() {
         String requestBody = "{\r\n"
         		+ "    \"email\": \"sydney@fife\"\r\n"
@@ -50,7 +67,7 @@ public class AuthenticationTest extends BaseTest {
             //.body("error", containsString("password"));
             .body("error", equalTo("Missing password"));
     }
-    @Test(priority = 3, description = "Registration without email - Verify 400")
+    @Test(priority = 4, description = "Registration without email - Verify 400")
     public void testRegistrationMissingEmail() {
         String requestBody = "{\r\n"
         		+ "    \"password\": \"pistol\"\r\n"
@@ -69,7 +86,7 @@ public class AuthenticationTest extends BaseTest {
             .body("error", equalTo("Missing email or username"));
     }
 
-    @Test(priority = 4, description = "Successful login")
+    @Test(priority = 5, description = "Successful login")
     public void testSuccessfulLogin() {
         String requestBody = "{\r\n"
         		+ "    \"email\": \"eve.holt@reqres.in\",\r\n"
@@ -89,7 +106,7 @@ public class AuthenticationTest extends BaseTest {
             .body("token",equalTo("QpwL5tke4Pnpja7X4"));
     }
 
-    @Test(priority = 5, description = "Login with invalid credentials: wrong password")
+    @Test(priority = 6, description = "Login with invalid credentials: wrong password")
     public void testLoginInvalidCredentials() {
         String requestBody = "{\n" +
                 "    \"email\": \"invalid@test.com\",\n" +
@@ -112,7 +129,7 @@ public class AuthenticationTest extends BaseTest {
         printResponse(response);
 
     }
-    @Test(priority = 6, description = "Login with invalid credentials: Missing password")
+    @Test(priority = 7, description = "Login with invalid credentials: Missing password")
     public void testLoginMissingPassword() {
         String requestBody = "{\r\n"
         		+ "    \"email\": \"peter@klaven\"\r\n"
@@ -133,7 +150,7 @@ public class AuthenticationTest extends BaseTest {
         printResponse(response);
 
     }
-    @Test(priority = 7, description = "Login with invalid credentials: Missing username")
+    @Test(priority = 8, description = "Login with invalid credentials: Missing username")
     public void testLoginMissingUsername() {
         String requestBody = "{\r\n"
         		+ "    \"password\": \"cityslicka\"\r\n"

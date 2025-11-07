@@ -3,6 +3,9 @@ package tests;
 import base.BaseTest;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+
+import static org.testng.Assert.assertEquals;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,9 +17,8 @@ public class UserAPITest extends BaseTest {
     @Test(priority = 1, description = "Get list of users - Verify status code 200")
     public void testGetUsers() {
         Response response = given()
-                .spec(requestSpec)  // 👈 添加
-
-            .queryParam("page", 1)
+            .spec(requestSpec)
+            .queryParam("page", 1)//https://reqres.in/api/users?page=1
         .when()
             .get("/users")
         .then()
@@ -39,17 +41,17 @@ public class UserAPITest extends BaseTest {
         int userId = 2;
         
         Response response = given()
-                .spec(requestSpec)  // 👈 添加
+                .spec(requestSpec) 
 
         .when()
-            .get("/users/" + userId)
+            .get("/users/" + userId)//https://reqres.in/api/users/2
         .then()
             .statusCode(200)
             .body("data.id", equalTo(userId))
             .body("data.email", notNullValue())
             .body("data.first_name", notNullValue())
             .body("data.last_name", notNullValue())
-        .extract().response();
+            .extract().response();
 
         printResponse(response);
         
@@ -61,10 +63,9 @@ public class UserAPITest extends BaseTest {
     @Test(priority = 3, description = "Get non-existent user - Verify 404")
     public void testGetUserNotFound() {
         given()
-        .spec(requestSpec)  // 👈 添加
-
+        .spec(requestSpec)
         .when()
-            .get("/users/999")
+            .get("/users/999")//https://reqres.in/api/users/999
         .then()
             .statusCode(404)
             .body(equalTo("{}"));
@@ -78,8 +79,7 @@ public class UserAPITest extends BaseTest {
                 "}";
 
         Response response = given()
-                .spec(requestSpec)  // 👈 添加
-
+            .spec(requestSpec) 
             .contentType(ContentType.JSON)
             .body(requestBody)
         .when()
@@ -90,7 +90,7 @@ public class UserAPITest extends BaseTest {
             .body("job", equalTo("SDET Engineer"))
             .body("id", notNullValue())
             .body("createdAt", notNullValue())
-        .extract().response();
+            .extract().response();
 
         printResponse(response);
         
@@ -105,18 +105,21 @@ public class UserAPITest extends BaseTest {
                 "    \"job\": \"Senior SDET Engineer\"\n" +
                 "}";
 
-        given()
-        .spec(requestSpec)  // 👈 添加
-
-           // .contentType(ContentType.JSON)
-            .body(requestBody)
+        Response response=given()
+        .spec(requestSpec)
+        .body(requestBody)
         .when()
             .put("/users/2")
         .then()
             .statusCode(200)
             .body("name", equalTo("Jodie Wei Updated"))
             .body("job", equalTo("Senior SDET Engineer"))
-            .body("updatedAt", notNullValue());
+            .body("updatedAt", notNullValue())
+            .extract().response();
+
+        printResponse(response);
+        assertEquals(response.jsonPath().getString("name"), "Jodie Wei Updated");
+        assertEquals(response.jsonPath().getString("job"), "Senior SDET Engineer");
     }
 
     @Test(priority = 6, description = "Partial update user - Verify PATCH request")
@@ -125,23 +128,22 @@ public class UserAPITest extends BaseTest {
                 "    \"job\": \"Lead SDET Engineer\"\n" +
                 "}";
 
-        given()
-        .spec(requestSpec)  // 👈 添加
-
-           // .contentType(ContentType.JSON)
+        Response response = given()
+        	.spec(requestSpec)  
             .body(requestBody)
         .when()
             .patch("/users/2")
         .then()
             .statusCode(200)
-            .body("job", equalTo("Lead SDET Engineer"));
+            .body("job", equalTo("Lead SDET Engineer"))
+        	.extract().response();
+        printResponse(response);
     }
 
     @Test(priority = 7, description = "Delete user - Verify 204 status")
     public void testDeleteUser() {
         given()
-        .spec(requestSpec)  // 👈 添加
-
+        .spec(requestSpec)
         .when()
             .delete("/users/2")
         .then()
@@ -151,8 +153,7 @@ public class UserAPITest extends BaseTest {
     @Test(priority = 8, description = "Verify response time is acceptable")
     public void testResponseTime() {
         Response response = given()
-                .spec(requestSpec)  // 👈 添加
-
+        .spec(requestSpec)
         .when()
             .get("/users?page=1");
 
