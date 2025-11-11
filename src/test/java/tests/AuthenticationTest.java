@@ -18,9 +18,7 @@ public class AuthenticationTest extends BaseTest {
                 "}";
 
         given()
-        .spec(requestSpec)  // 👈 添加
-
-          //  .contentType(ContentType.JSON)
+        	.spec(requestSpec)
             .body(requestBody)
         .when()
             .post("/register")
@@ -39,9 +37,7 @@ public class AuthenticationTest extends BaseTest {
         		+ "}";
 
         given()
-        .spec(requestSpec)  // 👈 添加
-
-            //.contentType(ContentType.JSON)
+        	.spec(requestSpec) 
             .body(requestBody)
         .when()
             .post("/register")
@@ -56,15 +52,12 @@ public class AuthenticationTest extends BaseTest {
         		+ "}";
 
         given()
-        .spec(requestSpec)  // 👈 添加
-
-            //.contentType(ContentType.JSON)
+        	.spec(requestSpec)
             .body(requestBody)
         .when()
             .post("/register")
         .then()
             .statusCode(400)
-            //.body("error", containsString("password"));
             .body("error", equalTo("Missing password"));
     }
     @Test(priority = 4, description = "Registration without email - Verify 400")
@@ -74,15 +67,12 @@ public class AuthenticationTest extends BaseTest {
         		+ "}";
 
         given()
-        .spec(requestSpec)  // 👈 添加
-
-            //.contentType(ContentType.JSON)
+        	.spec(requestSpec)
             .body(requestBody)
         .when()
             .post("/register")
         .then()
             .statusCode(400)
-            //.body("error", containsString("password"));
             .body("error", equalTo("Missing email or username"));
     }
 
@@ -94,9 +84,7 @@ public class AuthenticationTest extends BaseTest {
         		+ "}";
 
         given()
-        .spec(requestSpec)  // 👈 添加
-
-        //            .contentType(ContentType.JSON)
+        	.spec(requestSpec)
             .body(requestBody)
         .when()
             .post("/login")
@@ -114,9 +102,7 @@ public class AuthenticationTest extends BaseTest {
                 "}";
 
         Response response = given()
-        .spec(requestSpec)  // 👈 添加
-
-        //            .contentType(ContentType.JSON)
+        	.spec(requestSpec)  
             .body(requestBody)
         .when()
             .post("/login")
@@ -136,9 +122,7 @@ public class AuthenticationTest extends BaseTest {
         		+ "}";
 
         Response response = given()
-        .spec(requestSpec)  // 👈 添加
-
-        //            .contentType(ContentType.JSON)
+        	.spec(requestSpec)
             .body(requestBody)
         .when()
             .post("/login")
@@ -157,9 +141,7 @@ public class AuthenticationTest extends BaseTest {
         		+ "}";
 
         Response response = given()
-        .spec(requestSpec)  // 👈 添加
-
-        //            .contentType(ContentType.JSON)
+        	.spec(requestSpec)  
             .body(requestBody)
         .when()
             .post("/login")

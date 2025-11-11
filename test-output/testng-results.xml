@@ -2,84 +2,84 @@
 <testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-07T14:52:47 EST" name="API Automation Suite" finished-at="2025-11-07T14:52:52 EST" duration-ms="4349">
+  <suite started-at="2025-11-11T14:31:41 EST" name="API Automation Suite" finished-at="2025-11-11T14:31:46 EST" duration-ms="4777">
     <groups>
     </groups>
-    <test started-at="2025-11-07T14:52:47 EST" name="User API Tests" finished-at="2025-11-07T14:52:50 EST" duration-ms="2990">
+    <test started-at="2025-11-11T14:31:41 EST" name="User API Tests" finished-at="2025-11-11T14:31:45 EST" duration-ms="3541">
       <class name="tests.UserAPITest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:47 EST" name="setup" finished-at="2025-11-07T14:52:48 EST" duration-ms="338" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:41 EST" name="setup" finished-at="2025-11-11T14:31:41 EST" duration-ms="470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testGetUsers()[pri:1, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:48 EST" name="testGetUsers" description="Get list of users - Verify status code 200" finished-at="2025-11-07T14:52:49 EST" duration-ms="1411" status="PASS">
+        <test-method signature="testGetUsers()[pri:1, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:42 EST" name="testGetUsers" description="Get list of users - Verify status code 200" finished-at="2025-11-11T14:31:43 EST" duration-ms="1749" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetUsers -->
-        <test-method signature="testGetSingleUser()[pri:2, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:49 EST" name="testGetSingleUser" description="Get single user - Verify user details" finished-at="2025-11-07T14:52:49 EST" duration-ms="126" status="PASS">
+        <test-method signature="testGetSingleUser()[pri:2, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:43 EST" name="testGetSingleUser" description="Get single user - Verify user details" finished-at="2025-11-11T14:31:44 EST" duration-ms="276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetSingleUser -->
-        <test-method signature="testGetUserNotFound()[pri:3, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:49 EST" name="testGetUserNotFound" description="Get non-existent user - Verify 404" finished-at="2025-11-07T14:52:50 EST" duration-ms="240" status="PASS">
+        <test-method signature="testGetUserNotFound()[pri:3, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:44 EST" name="testGetUserNotFound" description="Get non-existent user - Verify 404" finished-at="2025-11-11T14:31:44 EST" duration-ms="219" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testGetUserNotFound -->
-        <test-method signature="testCreateUser()[pri:4, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:50 EST" name="testCreateUser" description="Create new user - Verify 201 status" finished-at="2025-11-07T14:52:50 EST" duration-ms="248" status="PASS">
+        <test-method signature="testCreateUser()[pri:4, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:44 EST" name="testCreateUser" description="Create new user - Verify 201 status" finished-at="2025-11-11T14:31:44 EST" duration-ms="253" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateUser -->
-        <test-method signature="testUpdateUser()[pri:5, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:50 EST" name="testUpdateUser" description="Update user - Verify PUT request" finished-at="2025-11-07T14:52:50 EST" duration-ms="265" status="PASS">
+        <test-method signature="testUpdateUser()[pri:5, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:44 EST" name="testUpdateUser" description="Update user - Verify PUT request" finished-at="2025-11-11T14:31:44 EST" duration-ms="183" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUpdateUser -->
-        <test-method signature="testPatchUser()[pri:6, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:50 EST" name="testPatchUser" description="Partial update user - Verify PATCH request" finished-at="2025-11-07T14:52:50 EST" duration-ms="141" status="PASS">
+        <test-method signature="testPatchUser()[pri:6, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:44 EST" name="testPatchUser" description="Partial update user - Verify PATCH request" finished-at="2025-11-11T14:31:44 EST" duration-ms="139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPatchUser -->
-        <test-method signature="testDeleteUser()[pri:7, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:50 EST" name="testDeleteUser" description="Delete user - Verify 204 status" finished-at="2025-11-07T14:52:50 EST" duration-ms="120" status="PASS">
+        <test-method signature="testDeleteUser()[pri:7, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:44 EST" name="testDeleteUser" description="Delete user - Verify 204 status" finished-at="2025-11-11T14:31:44 EST" duration-ms="135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDeleteUser -->
-        <test-method signature="testResponseTime()[pri:8, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-07T14:52:50 EST" name="testResponseTime" description="Verify response time is acceptable" finished-at="2025-11-07T14:52:50 EST" duration-ms="64" status="PASS">
+        <test-method signature="testResponseTime()[pri:8, instance:tests.UserAPITest@799f10e1]" started-at="2025-11-11T14:31:44 EST" name="testResponseTime" description="Verify response time is acceptable" finished-at="2025-11-11T14:31:45 EST" duration-ms="72" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testResponseTime -->
       </class> <!-- tests.UserAPITest -->
     </test> <!-- User API Tests -->
-    <test started-at="2025-11-07T14:52:50 EST" name="Authentication Tests" finished-at="2025-11-07T14:52:52 EST" duration-ms="1329">
+    <test started-at="2025-11-11T14:31:45 EST" name="Authentication Tests" finished-at="2025-11-11T14:31:46 EST" duration-ms="1178">
       <class name="tests.AuthenticationTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:50 EST" name="setup" finished-at="2025-11-07T14:52:50 EST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="setup" finished-at="2025-11-11T14:31:45 EST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testSuccessfulRegistration()[pri:1, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:50 EST" name="testSuccessfulRegistration" description="Successful registration" finished-at="2025-11-07T14:52:51 EST" duration-ms="147" status="PASS">
+        <test-method signature="testSuccessfulRegistration()[pri:1, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="testSuccessfulRegistration" description="Successful registration" finished-at="2025-11-11T14:31:45 EST" duration-ms="157" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSuccessfulRegistration -->
-        <test-method signature="testRegistrationWrongPassword()[pri:2, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:51 EST" name="testRegistrationWrongPassword" description="Registration wrong password - Verify 400" finished-at="2025-11-07T14:52:51 EST" duration-ms="234" status="PASS">
+        <test-method signature="testRegistrationWrongPassword()[pri:2, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="testRegistrationWrongPassword" description="Registration wrong password - Verify 400" finished-at="2025-11-11T14:31:45 EST" duration-ms="134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegistrationWrongPassword -->
-        <test-method signature="testRegistrationMissingPassword()[pri:3, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:51 EST" name="testRegistrationMissingPassword" description="Registration without password - Verify 400" finished-at="2025-11-07T14:52:51 EST" duration-ms="142" status="PASS">
+        <test-method signature="testRegistrationMissingPassword()[pri:3, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="testRegistrationMissingPassword" description="Registration without password - Verify 400" finished-at="2025-11-11T14:31:45 EST" duration-ms="145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegistrationMissingPassword -->
-        <test-method signature="testRegistrationMissingEmail()[pri:4, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:51 EST" name="testRegistrationMissingEmail" description="Registration without email - Verify 400" finished-at="2025-11-07T14:52:51 EST" duration-ms="138" status="PASS">
+        <test-method signature="testRegistrationMissingEmail()[pri:4, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="testRegistrationMissingEmail" description="Registration without email - Verify 400" finished-at="2025-11-11T14:31:45 EST" duration-ms="137" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRegistrationMissingEmail -->
-        <test-method signature="testSuccessfulLogin()[pri:5, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:51 EST" name="testSuccessfulLogin" description="Successful login" finished-at="2025-11-07T14:52:51 EST" duration-ms="139" status="PASS">
+        <test-method signature="testSuccessfulLogin()[pri:5, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="testSuccessfulLogin" description="Successful login" finished-at="2025-11-11T14:31:45 EST" duration-ms="160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSuccessfulLogin -->
-        <test-method signature="testLoginInvalidCredentials()[pri:6, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:51 EST" name="testLoginInvalidCredentials" description="Login with invalid credentials: wrong password" finished-at="2025-11-07T14:52:51 EST" duration-ms="226" status="PASS">
+        <test-method signature="testLoginInvalidCredentials()[pri:6, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="testLoginInvalidCredentials" description="Login with invalid credentials: wrong password" finished-at="2025-11-11T14:31:45 EST" duration-ms="150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginInvalidCredentials -->
-        <test-method signature="testLoginMissingPassword()[pri:7, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:51 EST" name="testLoginMissingPassword" description="Login with invalid credentials: Missing password" finished-at="2025-11-07T14:52:52 EST" duration-ms="152" status="PASS">
+        <test-method signature="testLoginMissingPassword()[pri:7, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:45 EST" name="testLoginMissingPassword" description="Login with invalid credentials: Missing password" finished-at="2025-11-11T14:31:46 EST" duration-ms="150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginMissingPassword -->
-        <test-method signature="testLoginMissingUsername()[pri:8, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-07T14:52:52 EST" name="testLoginMissingUsername" description="Login with invalid credentials: Missing username" finished-at="2025-11-07T14:52:52 EST" duration-ms="140" status="PASS">
+        <test-method signature="testLoginMissingUsername()[pri:8, instance:tests.AuthenticationTest@c730b35]" started-at="2025-11-11T14:31:46 EST" name="testLoginMissingUsername" description="Login with invalid credentials: Missing username" finished-at="2025-11-11T14:31:46 EST" duration-ms="135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginMissingUsername -->
