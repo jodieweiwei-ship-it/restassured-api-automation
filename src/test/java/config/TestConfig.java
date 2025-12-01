@@ -18,7 +18,7 @@ public class TestConfig {
     public static final String PETER_EMAIL = "peter@klaven";
 
     // Expected tokens
-    public static final String EXPECTED_TOKEN = "reqres_d12155d34a0a4bc897208cb2893e9c0c";
+    public static final String EXPECTED_TOKEN = "USE YOUR OWN TOKEN";
     public static final int EXPECTED_USER_ID = 4;
 
     // Timeout configurations (in milliseconds)
