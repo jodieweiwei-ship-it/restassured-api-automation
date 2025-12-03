@@ -3,7 +3,6 @@ package specifications;
 import config.ApiConfig;
 import config.HeaderConfig;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
 /**
@@ -19,7 +18,6 @@ public class RequestSpecs {
         return new RequestSpecBuilder()
                 .setBaseUri(ApiConfig.BASE_URI)
                 .addHeaders(HeaderConfig.getDefaultHeaders())
-                .setContentType(ContentType.JSON)
                 .build();
     }
 
