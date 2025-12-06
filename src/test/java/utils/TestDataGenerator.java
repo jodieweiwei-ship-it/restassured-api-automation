@@ -50,7 +50,7 @@ public class TestDataGenerator {
         String[] firstNames = { "John", "Jane", "Michael", "Sarah", "David", "Emma" };
         String[] lastNames = { "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia" };
         return firstNames[random.nextInt(firstNames.length)] + " " +
-                lastNames[random.nextInt(lastNames.length)];
+                lastNames[random.nextInt(lastNames.length)];//random.nextInt(array.length): This method from the Random class generates a random integer between 0 (inclusive) and the number passed as the argument (exclusive).
     }
 
     /**

@@ -1,5 +1,7 @@
 package config;
 
+import java.util.Properties;
+
 /**
  * API Configuration class
  * Centralizes all API endpoint URLs and environment settings

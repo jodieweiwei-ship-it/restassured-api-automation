@@ -17,7 +17,7 @@ public class User {
     @JsonProperty("last_name")
     private String lastName;
 
-    private String avatar;
+    private String avatar;//profile picture.
 
     // Fields for Create/Update requests (Reqres uses name/job)
     private String name;

@@ -6,18 +6,38 @@ import java.util.List;
 /**
  * User Response POJO
  * Wraps the paginated API response structure for user lists
+ *{
+    "page": 2,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 7,
+            "email": "michael.lawson@reqres.in",
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://reqres.in/img/faces/7-image.jpg"
+        }
+        // ... more users ...
+    ],
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
  */
 public class UserResponse {
 
-    private Integer page;
+    private Integer page;//The current page number the user is viewing.
 
-    @JsonProperty("per_page")
-    private Integer perPage;
+    @JsonProperty("per_page")//Jackson library annotation @JsonProperty to map JSON field names (which typically use snake_case) to Java field names (which use camelCase).
+    private Integer perPage;//How many items are shown on one page.
 
-    private Integer total;
+    private Integer total;//The total number of records available in the database.
 
     @JsonProperty("total_pages")
-    private Integer totalPages;
+    private Integer totalPages;//The total number of pages available.
 
     private List<User> data;
 
